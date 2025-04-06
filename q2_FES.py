@@ -26,7 +26,7 @@ city_B = '44996729'
 
 # Function to calculate travel time for a link
 def calculate_travel_time(link_length, max_speed):
-    mean_travel_time = link_length / max_speed  # in hours
+    mean_travel_time = (link_length / 1000) / max_speed  # in hours
     std_dev = mean_travel_time / 20  # standard deviation
     travel_time = norm.rvs(loc=mean_travel_time, scale=std_dev)  # normally distributed
     return travel_time * 60  # convert to minutes
